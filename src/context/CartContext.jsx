@@ -1,15 +1,31 @@
 import React, { createContext, useState } from "react";
+import { addItem, decrementItem, removeItem, countItems, totalCents } from "../utils/cart";
 
 export const CartCxt = createContext();
 
 const CartProvider = (props) => {
     const [items, setItems] = useState([]);
 
-    const addItemCart = (name, price) => {
-        setItems((prevState) => [...prevState, { name, price }])
+    const addItemCart = (product) => {
+        setItems((prevState) => addItem(prevState, product))
     }
 
-    const value = { items, addItemCart };
+    const decrementItemCart = (id) => {
+        setItems((prevState) => decrementItem(prevState, id))
+    }
+
+    const removeItemCart = (id) => {
+        setItems((prevState) => removeItem(prevState, id))
+    }
+
+    const value = {
+        items,
+        itemCount: countItems(items),
+        total: totalCents(items) / 100,
+        addItemCart,
+        decrementItemCart,
+        removeItemCart,
+    };
     return (
         <CartCxt.Provider value={value} >
             {props.children}
