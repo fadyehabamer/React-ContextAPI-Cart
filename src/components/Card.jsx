@@ -1,16 +1,16 @@
 import React , {useContext}from 'react'
 import {CartCxt} from '../context/CartContext'
+import { formatPrice } from '../utils/cart'
 
 function Card({product}) {
     const {addItemCart} = useContext(CartCxt)
-    // console.log()  ;
     return (
         <div className="card">
-            <img src={product.image_src} alt="product"/>
+            <img src={product.image_src} alt={product.name}/>
             <h1>{product.name}</h1>
-            <p className="price">{product.price}</p>
+            <p className="price">{formatPrice(product.price)}</p>
             <p>{product.description}</p>
-            <p><button onClick={()=>{addItemCart(product.name , product.price)}}>Add to Cart</button></p>
+            <p><button type="button" onClick={()=>{addItemCart(product)}}>Add to Cart</button></p>
         </div>
     )
 }
