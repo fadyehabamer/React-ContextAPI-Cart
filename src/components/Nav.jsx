@@ -4,13 +4,12 @@ import { CartCxt } from '../context/CartContext'
 
 
 function Nav() {
-    const {items} = useContext(CartCxt)
-    console.log(items)
+    const {itemCount} = useContext(CartCxt)
     return (
 
         <div className="topnav">
-            <NavLink exact to='/' >Home</NavLink>
-            <NavLink to="/cart"> Cart ({items.length}) </NavLink>
+            <NavLink end to='/' >Home</NavLink>
+            <NavLink to="/cart"> Cart ({itemCount}) </NavLink>
         </div>
 
 
