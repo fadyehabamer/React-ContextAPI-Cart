@@ -1,4 +1,7 @@
 # React ContextAPI Cart
+
+[![CI](https://github.com/fadyehabamer/React-ContextAPI-Cart/actions/workflows/ci.yml/badge.svg)](https://github.com/fadyehabamer/React-ContextAPI-Cart/actions/workflows/ci.yml)
+
 > Cart Functionality built with React &amp; Context API 
 
 **Live demo:** https://react-context-api-cart.vercel.app/

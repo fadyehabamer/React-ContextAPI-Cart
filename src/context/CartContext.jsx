@@ -1,7 +1,6 @@
-import React, { createContext, useState } from "react";
+import { useState } from "react";
+import { CartCxt } from "./cart";
 import { addItem, decrementItem, removeItem, countItems, totalCents } from "../utils/cart";
-
-export const CartCxt = createContext();
 
 const CartProvider = (props) => {
     const [items, setItems] = useState([]);
