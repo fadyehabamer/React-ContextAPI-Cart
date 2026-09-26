@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { CartCxt } from '../context/CartContext'
+import { useContext } from 'react'
+import { CartCxt } from '../context/cart'
 import { formatPrice } from '../utils/cart'
 
 function Cart() {
